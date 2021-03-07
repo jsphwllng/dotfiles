@@ -1,12 +1,12 @@
-
-export ZSH="/Users/joseph/.oh-my-zsh"
+export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="common"
 
 plugins=(git docker docker-compose)
 
 source $ZSH/oh-my-zsh.sh
-
+alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
+alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 alias zshh="idea ~/.zshrc"
 alias cleanup="yarn format:fix && yarn lint --fix"
 alias sleep='pmset sleepnow'
