@@ -1,0 +1,17 @@
+[user]
+	name = Joseph Welling
+	email = jow@alteos.com
+[alias]
+	st = status -sb
+	cm = commit -m
+	gl = config --global -l
+	co = checkout
+	cl = clone
+	statsu = status
+	heroku = ! git add . && git commit -m ok && git push heroku && heroku logs --tail
+[url "git@gitlab.com:"]
+	insteadOf = https://gitlab.com/
+[core]
+	editor = idea
+[help]
+	autocorrect = 30
