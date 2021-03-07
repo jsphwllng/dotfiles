@@ -1,6 +1,6 @@
-# `My beloved dotfiles 🦑`
+# `My beloved dotfiles 🐒`
 
-###Installation
+### Installation
 ```
 git clone https://github.com/jsphwllng/dotfiles
 sh setup.sh
