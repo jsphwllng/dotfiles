@@ -12,7 +12,7 @@ sh install-zsh.sh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 echo "copying dotfiles"
 cp -fr .oh-my-zsh ~
-cp {./others.zshrc,./others.hushlogin,.gitstuff/.gitconfig} ~
+cp {./others.zshrc,./others.hushlogin,.gitstuff/.gitconfig,.gitstuff/.gitignore_global} ~
 curl https://raw.githubusercontent.com/goblincore/Coding-Fonts/master/Gintronic/TTF/Gintronic-Regular.ttf --output gintronic-Regular.ttf
 cp gintronic-Regular.ttf /Library/Fonts/
 rm -rf gintronic-Regular.ttf
@@ -22,4 +22,5 @@ open -a iTerm .
 echo "select the iterm2profile as your profile"
 echo "Press enter to continue"
 read -t 5
+sh .macos
 cat media/monkey.txt
