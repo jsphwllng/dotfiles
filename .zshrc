@@ -9,19 +9,16 @@ source $ZSH/oh-my-zsh.sh
 
 alias zshh="idea ~/.zshrc"
 alias cleanup="yarn format:fix && yarn lint --fix"
-alias sleep="pmset sleepnow"
-alias activate='test -d ENV && source ./ENV/bin/activate || echo "No Virtualenv in the current folder"'
-alias mkenv='test -d ENV && echo "Already exists" || virtualenv --system-site-packages ENV; activate'
-alias ls ="ls -la"
-alias d ="docker"
-alias dc="docker container"
+alias sleep='pmset sleepnow'
+alias activate='source ./ENV/bin/activate'
+alias mkenv='virtualenv --system-site-packages ENV; activate'
+alias d='docker'
+alias dc='docker container'
+alias l='ls -la'
 alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../'
-
-
-engr(){ (google-chrome "https://translate.google.com/?sl=en&tl=gr&text=$*" )& }
 
 newpreview() {
     if [ "$1" != "" ]
@@ -57,7 +54,7 @@ newbranch() {
         echo -e "✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨"
 }
 
-tspush() #"commit message" {
+tspush(){
     echo -e "✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨"
     echo -e 'Fixing'
     yarn fix
@@ -72,11 +69,9 @@ tspush() #"commit message" {
         echo "no commit message added"
         echo "💩"
     fi
-
-
 }
 
-gopush() #"commit message" {
+gopush(){
     echo -e "✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨"
     echo -e 'Fixing'
     make format-fix
