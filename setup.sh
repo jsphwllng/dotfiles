@@ -21,6 +21,8 @@ wget -O /Users/$USER/.oh-my-zsh/themes/common.zsh-theme https://raw.githubuserco
 open -a iTerm .
 echo "select the iterm2profile as your profile"
 echo "Press enter to continue"
-read -t 5
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+read -t 50000
 sh .macos
 cat media/monkey.txt
