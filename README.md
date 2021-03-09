@@ -9,4 +9,4 @@ sh setup.sh
 
 Follow the instructions such as logging into bitwarden, setting up gitconfig, etc.
 
-![shell](code/dotfiles/media/welcome.png "shell")
+![shell](media/welcome.png "shell")
