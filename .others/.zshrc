@@ -2,7 +2,7 @@ export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="common"
 
-plugins=(git docker docker-compose)
+plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
@@ -88,8 +88,12 @@ gopush(){
         echo "no commit message added"
         echo "💩"
     fi
+}
 
-
+justpush(){
+    git add .
+    git commit -m "update"
+    git push
 }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
