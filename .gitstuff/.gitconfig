@@ -1,6 +1,6 @@
 [user]
-	name = Joseph Welling
-	email = jow@alteos.com
+	name = example
+	email = email
 [alias]
 	st = status -sb
 	cm = commit -m

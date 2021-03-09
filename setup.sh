@@ -20,9 +20,13 @@ chsh -s /bin/zsh
 wget -O /Users/$USER/.oh-my-zsh/themes/common.zsh-theme https://raw.githubusercontent.com/jackharrisonsherlock/common/master/common.zsh-theme
 open -a iTerm .
 echo "select the iterm2profile as your profile"
-echo "Press enter to continue"
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+echo "Press Enter to continue"
 read -t 50000
 sh .macos
+sh .others/programs.sh
+echo "Press update name and email in gitconfig and press Enter to continue"
+code ~/.gitconfig
+read -t 50000
 cat media/monkey.txt
