@@ -21,6 +21,7 @@ alias ....='cd ../../../../'
 alias .....='cd ../../../../'
 alias i='idea'
 alias ii='idea .'
+alias grepn='grep -n'
 
 newpreview() {
     if [ "$1" != "" ]
