@@ -19,6 +19,8 @@ alias ..='cd ..'
 alias ...='cd ../../../'
 alias ....='cd ../../../../'
 alias .....='cd ../../../../'
+alias i='idea'
+alias ii='idea .'
 
 newpreview() {
     if [ "$1" != "" ]
@@ -45,7 +47,7 @@ newbranch() {
         git checkout -b $1
         git commit -m "" -n --allow-empty
         echo ""
-        echo -e '🚀creating $1🚀'
+        echo -e '🚀creating🚀'
         echo ""
         git push --set-upstream origin $1
     else
@@ -62,7 +64,7 @@ tspush(){
     if [ "$1" != "" ] # or better, if [ -n "$1" ]
     then
         git commit -m "$1"
-        echo -e '🚀pushing $1🚀'
+        echo -e '🚀pushing🚀'
         git push
         echo -e "✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨"
     else
@@ -92,8 +94,13 @@ gopush(){
 
 justpush(){
     git add .
-    git commit -m "update"
+    if [ "$1" != "" ] # or better, if [ -n "$1" ]
+    then
+        git commit -m "update"
+    else
+        git commit -m "$1"
     git push
+    fi
 }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
