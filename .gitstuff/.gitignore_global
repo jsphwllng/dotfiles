@@ -1,3 +1,13 @@
 .idea
 .code
-.DS_STORE
+.DS_Store
+/.idea/
+/.vscode/
+/bin/*
+/debug
+/vendor/
+/.coverage.cov
+/.env*
+!/.env.example
+/.history/
+test
