@@ -11,3 +11,4 @@
 !/.env.example
 /.history/
 test
+.vscode
