@@ -5,16 +5,19 @@ ZSH_THEME="common"
 plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
+source ~/.gvm/scripts/gvm
 alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && killall Finder"
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
-alias zshh="idea ~/.zshrc"
+alias zshh="code ~/.zshrc"
 alias cleanup="yarn format:fix && yarn lint --fix"
 alias sleep='pmset sleepnow'
-alias activate='source ./ENV/bin/activate'
-alias mkenv='virtualenv --system-site-packages ENV; activate'
+alias mkenv='python3 -m venv venv && source venv/bin/activate'
 alias d='docker'
 alias dc='docker container'
+alias dco='docker-compose'
 alias dn='docker network'
+alias di='docker image'
+alias dv='docker volume'
 alias l='ls -la'
 alias ..='cd ..'
 alias ...='cd ../../../'
@@ -22,7 +25,26 @@ alias ....='cd ../../../../'
 alias .....='cd ../../../../'
 alias i='idea'
 alias ii='idea .'
+alias c='code'
+alias cc='code .'
 alias grepn='grep -n'
+alias pcat='pygmentize -f terminal256 -O style=native -g'
+alias wttr='curl wttr.in/berlin'
+alias myip='curl ifconfig.me'
+alias gpl='git pull'
+
+mkcd () {
+  mkdir "$1"
+  cd "$1"
+}
+
+deletebranch(){
+    if [ "$1" != "" ]
+    then
+        git branch -D $1
+        git push origin --delete $1
+    fi
+}
 
 newpreview() {
     if [ "$1" != "" ]
@@ -45,9 +67,9 @@ newbranch() {
     if [ "$1" != "" ]
     then
         echo -e "✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨  ✨"
-        git add .
         git checkout -b $1
-        git commit -m "" -n --allow-empty
+        git add .
+        git commit -m "initial commit" -n --allow-empty
         echo ""
         echo -e '🚀creating🚀'
         echo ""
@@ -95,14 +117,15 @@ gopush(){
 }
 
 justpush(){
+    cleanup
     git add .
     if [ "$1" != "" ] # or better, if [ -n "$1" ]
     then
-        git commit -m "update"
-    else
         git commit -m "$1"
-    git push
+    else
+        git commit -m "update"
     fi
+    git push
 }
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
@@ -111,3 +134,8 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completionexport PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
+export GOPATH=$HOME/go
+export GOROOT=/usr/local/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOPATH
+export PATH=$PATH:$GOROOT/bin

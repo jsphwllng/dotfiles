@@ -7,7 +7,7 @@ xcode-select --install
 echo "installing brew"
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 echo "Installing brew files"
-brew bundle
+brew bundle install
 sh install-zsh.sh
 cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
 echo "copying dotfiles"
