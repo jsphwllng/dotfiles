@@ -1,6 +1,7 @@
 export ZSH="/Users/$USER/.oh-my-zsh"
 
 ZSH_THEME="common"
+SOLARIZED_THEME="dark"
 
 plugins=(git docker docker-compose zsh-syntax-highlighting zsh-autosuggestions)
 
@@ -33,9 +34,22 @@ alias wttr='curl wttr.in/berlin'
 alias myip='curl ifconfig.me'
 alias gpl='git pull'
 
+cacc(){
+    code ~/code/services/accounting
+}
+
+caut(){
+    code ~/code/services/auth
+}
+
 mkcd () {
   mkdir "$1"
   cd "$1"
+}
+
+mkcc () {
+  mkdir "$1"
+  c "$1"
 }
 
 deletebranch(){
@@ -134,8 +148,7 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
   [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completionexport PATH="/usr/local/opt/postgresql@12/bin:$PATH"
 export PATH="/usr/local/opt/postgresql@12/bin:$PATH"
-export GOPATH=$HOME/go
-export GOROOT=/usr/local/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOPATH
+export GOPATH=$HOME/golang
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOPATH/bin
 export PATH=$PATH:$GOROOT/bin

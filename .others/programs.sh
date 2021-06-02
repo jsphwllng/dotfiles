@@ -4,7 +4,7 @@ read -t 50000
 open -a Alfred\ 4
 open -a Firefox
 open -a Spotify
-open -a IntelliJ\ IDEA
+open -a Code
 open -a Spark
 open -a Telegram
 open -a Twitter
