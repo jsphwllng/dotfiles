@@ -9,4 +9,24 @@ sh setup.sh
 
 Follow the instructions such as logging into bitwarden, setting up gitconfig, etc.
 
-![shell](media/welcome.png "shell")
+```
+                     .-"""-.
+                   _/-=-.   \
+                  (_|a a/   |_
+                   / "  \   ,_)
+              _    \`=' /__/
+             / \_  .;--'  `-.
+             \___)//      ,  \
+              \ \/;        \  \
+               \_.|         | |
+                .-\ '     _/_/
+              .'  _;.    (_  \
+             /  .'   `\   \\_/
+            |_ /       |  |\\
+           /  _)       /  / ||
+          /  /       _/  /  //
+          \_/       ( `-/  ||
+                    /  /   \\ .-.
+                    \_/     \'-'/
+                             `"`
+```
